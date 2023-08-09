@@ -9,19 +9,11 @@ pipeline {
         stage('terraform format check') {
             steps{
                 sh 'terraform fmt'
-            }
-        }
-        stage('terraform Init') {
-            steps{
                 sh 'terraform init'
+                sh 'terraform apply --auto-approve
+                
             }
         }
-        stage('terraform apply') {
-            steps{
-                sh 'terraform apply --auto-approve'
-            }
+        
         }
     }
-
-    
-}
