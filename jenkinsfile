@@ -8,7 +8,6 @@ pipeline {
         }
         stage('terraform format check') {
             steps{
-                sh 'terraform fmt'
                 sh 'terraform init'
                 sh 'terraform apply --auto-approve'
                 
